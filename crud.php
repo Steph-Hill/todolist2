@@ -7,7 +7,7 @@
 
         switch ($_GET["action"]) {
 
-
+ 
             case "ajouter":
                 var_dump($_POST);
                 //$marequete = "INSERT INTO `tasks` (`id`, `tache`, `etat`) VALUES (NULL,'".$_POST ["tache"]."','n')";

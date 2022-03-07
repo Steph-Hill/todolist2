@@ -11,7 +11,7 @@ $resultQueryTasks = $mysqli->query("SELECT * FROM tasks ORDER BY id DESC");
 
         
 
-        foreach($resultQueryTasks as $rowTask){
+        foreach($resultQueryTasks as $rowTasks) {
 
 ?>
   
@@ -19,23 +19,25 @@ $resultQueryTasks = $mysqli->query("SELECT * FROM tasks ORDER BY id DESC");
     <li href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
 
     
-    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+    <img src="https://github.com/twbs.png" alt="twbs" width="70" height="70" class="rounded-circle flex-shrink-0">
             
 
         <div>
            <div class="d-flex gap-2 w-100 justify-content-between">
-            <h6 class="mb-0"><?php echo$rowTask["tache"] ;?></h6>
-            <p class="mb-0 opacity-75"><?php echo$rowTask["dateins"] ;?></p> 
+            <h7 class="mb-0"><?php echo$rowTasks["nom"] ;?></h7>
+            <h6 class="mb-0"><?php echo$rowTasks["description"] ;?></h6>
+           
+            <p class="mb-0 opacity-75"><?php echo$rowTasks["dateins"] ;?></p> 
         </div>
-        <small class="opacity-50 text-nowrap"><?php echo$rowTask["id"] ;?></small>
+        <small class="opacity-50 text-nowrap"><?php echo$rowTasks["id"] ;?></small>
 </ul>
     
 <?php 
 
-            if($rowTask["etat"] == "n"){
+            if($rowTasks["etat"] == "n"){
 
 
-            $linkRealise= $dir_ws."crud.php?action=realiser&id=".$rowTask["id"];
+            $linkRealise= $dir_ws."crud.php?action=realiser&id=".$rowTasks["id"];
 
 ?>
     <a herf="<?php echo $linkRealise ?>"type="button" classe="btn btn-outline-success">Réalisé</a>
@@ -44,10 +46,10 @@ $resultQueryTasks = $mysqli->query("SELECT * FROM tasks ORDER BY id DESC");
 
 <?php 
 
-            if($rowTask["etat"] == "o"){
+            if($rowTasks["etat"] == "o"){
 
 
-            $linksuppr= $dir_ws."crud.php?action=supprimer&id=".$rowTask["id"];
+            $linksuppr= $dir_ws."crud.php?action=supprimer&id=".$rowTasks["id"];
 
 
 ?>

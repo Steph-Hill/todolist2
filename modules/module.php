@@ -7,22 +7,33 @@
     if(isset($_GET["mod"])){
 
         switch ($_GET["mod"]) {
-            
+             
             case "ajouter":
 
                 include($dir_fs."pages/ajouter.php");
      
+                    break;
 
-                break;
+            case "accueil":
 
-                    case "accueil":
+                include($dir_fs."pages/accueil.php");
+                        
+                    break;
+
+            case "aide":
+
+                include($dir_fs."pages/aide.php");
+             
+                    break;
+
+
+                    default :
 
                     include($dir_fs."pages/accueil.php");
 
-                        case "aide":
 
-                            include($dir_fs."pages/aide.php");
-             
+
+
 
                 
 
